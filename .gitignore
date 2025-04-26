@@ -1,3 +1,2 @@
 .env
-Data/*.pdf
-*.pdf
+Data/
