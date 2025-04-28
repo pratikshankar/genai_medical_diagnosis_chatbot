@@ -21,6 +21,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.memory import ConversationBufferMemory
 
 
 app = Flask(__name__)
@@ -44,7 +45,7 @@ docsearch=PineconeVectorStore.from_existing_index(
     embedding=embeddings
 )
 ## initializing retriver object
-retriver=docsearch.as_retriever(search_type="similarity",search_kwargs={"k": 3})
+retriver=docsearch.as_retriever(search_type="similarity",search_kwargs={"k": 60})
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash-001",
@@ -65,24 +66,11 @@ prompt = ChatPromptTemplate.from_messages([
 question_answer_chain = create_stuff_documents_chain(llm, prompt)
 rag_chain = create_retrieval_chain(retriver, question_answer_chain)
 
-# print("📘 Ask me anything related to medical (type 'exit' to quit):")
-# while True:
-#     user_input = input("\n🧠 Your question: ").strip()
-#     if user_input.lower() in ("exit", "quit"):
-#         print("👋 Exiting. Have a great day!")
-#         break
-
-#     try:
-#         response = rag_chain.invoke({"input": user_input})
-#         print(f"\n🤖 Question: {user_input}")
-#         print(f"\n🤖 Answer: {response['answer']}")
-#     except Exception as e:
-#         print(f"⚠️ Error: {e}")
 
 
 @app.route("/")
 def index():
-    return render_template('chat.html')
+    return render_template('index.html')
 
 
 @app.route("/get", methods=["GET", "POST"])

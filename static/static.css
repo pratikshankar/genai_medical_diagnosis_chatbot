@@ -1,4 +1,4 @@
-body,html{
+/* body,html{
 	height: 100%;
 	margin: 0;
 	background: rgb(44, 47, 59);
@@ -220,4 +220,146 @@ border-radius: 0 0 15px 15px !important;
 	.contacts_card{
 	margin-bottom: 15px !important;
 }
+} */
+
+/* General */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.chat {
+    margin-top: 5%;
+    margin-bottom: auto;
+}
+
+.card {
+    height: 500px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.card-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px 15px;
+}
+
+.user_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user_info {
+    margin-left: 10px;
+}
+
+.user_info span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.user_info small {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* Online Dot (Optional if you want) */
+.online_icon {
+    background-color: #4cd137;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Body */
+.msg_card_body {
+    overflow-y: auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    background-color: #f1f2f6;
+}
+
+/* Chat Bubbles */
+.msg_cotainer, .msg_cotainer_send {
+    max-width: 70%;
+    word-wrap: break-word;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+}
+
+.msg_cotainer {
+    background-color: #e2e2e2;
+    color: #333;
+    margin-left: 10px;
+}
+
+.msg_cotainer_send {
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 10px;
+}
+
+/* Message Timestamps */
+.small {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+/* Footer */
+.card-footer {
+    background-color: #ffffff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px 15px;
+}
+
+#text {
+    border-radius: 20px 0 0 20px;
+}
+
+.send_btn {
+    background-color: #007bff;
+    border-radius: 0 20px 20px 0;
+    color: white;
+}
+
+.send_btn:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+/* Bot Avatar in Messages */
+.user_img_msg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: auto;
+}
+
+/* Scrollbar for chat */
+.msg_card_body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.msg_card_body::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.msg_card_body::-webkit-scrollbar-track {
+    background: #f1f2f6;
 }
