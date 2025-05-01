@@ -1,8 +1,9 @@
 # genai_medical_diagnosis_chatbot
 I will build a rag based chatbot application to answer questions related to medical diagnosis and teatment.
-# 🏥 Medical RAG Chatbot using Gemini 2.0 and Pinecone
+# 🏥 Physiotherapy / Medical RAG Chatbot using Gemini 2.0 and Pinecone
 
 ---
+![alt text](<Screenshot 2025-05-01 at 7.56.03 PM.png>)
 
 ## 🚀 Project Description
 
